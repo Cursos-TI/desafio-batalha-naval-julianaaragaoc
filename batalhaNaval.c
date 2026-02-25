@@ -36,5 +36,99 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+    // ===============================
+    // 1. DECLARAÇÃO DO TABULEIRO
+    // ===============================
+    
+    int tabuleiro[10][10];
+
+    // Inicializa todas as posições com 0 (água)
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            tabuleiro[i][j] = 0;
+        }
+    }
+
+    // ===============================
+    // 2. VETORES DE LINHA E COLUNA
+    // ===============================
+
+    // Vetor para letras das colunas
+    char colunas[10] = {'A','B','C','D','E','F','G','H','I','J'};
+
+    // Vetor para números das linhas
+    int linhas[10];
+    for (int i = 0; i < 10; i++) {
+        linhas[i] = i + 1;
+    }
+
+    // ===============================
+    // 3. IMPRESSÃO DO TABULEIRO
+    // ===============================
+
+    printf("\nTABULEIRO BATALHA NAVAL VAZIO\n");
+
+    // Imprime cabeçalho das colunas
+    printf("   ");
+    for (int j = 0; j < 10; j++) {
+        printf("%c ", colunas[j]);
+    }
+    printf("\n");
+
+    // Imprime as linhas com os valores
+    for (int i = 0; i < 10; i++) {
+        printf("%2d ", linhas[i]);  // imprime número da linha alinhado
+
+        for (int j = 0; j < 10; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+
+        printf("\n");
+    }
+
+     // ===============================
+    // 4. NAVIO HORIZONTAL
+    // Linha 3 (índice 2)
+    // Colunas D-F (3,4,5)
+    // ===============================
+    int linhaH = 2;
+    int colunaInicialH = 3;
+
+    for (int j = 0; j < 3; j++) {
+        tabuleiro[linhaH][colunaInicialH + j] = 3;
+    }
+
+    // ===============================
+    // 5. NAVIO VERTICAL
+    // Linhas 5-7 (4,5,6)
+    // Coluna H (7)
+    // ===============================
+    int linhaInicialV = 4;
+    int colunaV = 7;
+
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linhaInicialV + i][colunaV] = 3;
+    }
+
+    printf("\nTABULEIRO BATALHA NAVAL COM NAVIOS POSICIONADOS\n");
+
+    // Imprime cabeçalho
+    printf("   ");
+    for (int j = 0; j < 10; j++) {
+        printf("%c ", colunas[j]);
+    }
+    printf("\n");
+
+    // Imprime tabuleiro
+    for (int i = 0; i < 10; i++) {
+        printf("%2d ", i + 1);
+
+        for (int j = 0; j < 10; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+
+        printf("\n");
+    }
+
     return 0;
 }
