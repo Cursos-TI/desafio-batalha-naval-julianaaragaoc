@@ -110,6 +110,26 @@ int main() {
         tabuleiro[linhaInicialV + i][colunaV] = 3;
     }
 
+// ===============================
+    // 6. NAVIO DIAGONAL PRINCIPAL
+    // ===============================
+    int linhaInicialDS = 0;
+    int colunaDS = 9;
+
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linhaInicialDS + i][colunaDS-i] = 3;
+    }
+
+    // ===============================
+    // 7. NAVIO DIAGONAL SECUNDÁRIA
+    // ===============================
+    int linhaInicialD = 0;
+    int colunaD = 0;
+
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linhaInicialD + i][colunaD+i] = 3;
+    }
+
     printf("\nTABULEIRO BATALHA NAVAL COM NAVIOS POSICIONADOS\n");
 
     // Imprime cabeçalho
